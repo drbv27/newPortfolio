@@ -1,17 +1,13 @@
 import './index.scss'
 
-import React from 'react'
-
-const AnimatedLetters = ({letterClass, strArray, idx}) => {
+const AnimatedLetters = ({ letterClass, strArray, idx }) => {
   return (
     <span>
-        {
-            strArray.map((char,i) =>(
-                <span key={char + i} className={`${letterClass} _${i + idx}`}>
-                    {char}
-                </span>
-            ))
-        }
+      {strArray.map((char, i) => (
+        <span key={char + i} className={`${letterClass} _${i + idx}`}>
+          {char}
+        </span>
+      ))}
     </span>
   )
 }

@@ -6,6 +6,7 @@ import {
   faHtml5,
   faJsSquare,
   faReact,
+  faSass
 } from '@fortawesome/free-brands-svg-icons'
 import Loader from 'react-loaders'
 import AnimatedLetters from '../AnimatedLetters'
@@ -56,7 +57,7 @@ const About = () => {
               <FontAwesomeIcon icon={faHtml5} color="#F06529" />
             </div>
             <div className="face1">
-              <FontAwesomeIcon icon={faAngular} color="#DD0031" />
+              <FontAwesomeIcon icon={faSass} color="#CC6699" />
             </div>
             <div className="face3">
               <FontAwesomeIcon icon={faCss3} color="#28A4D9" />

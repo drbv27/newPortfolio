@@ -6,7 +6,7 @@ import emailjs from '@emailjs/browser'
 
 const Contact = () => {
     const [letterClass, setLetterClass] = useState('text-animate')
-    const refForm = useRef()
+    const form = useRef()
 
     useEffect(() => {
       const timer = setTimeout(() => {
@@ -20,18 +20,19 @@ const Contact = () => {
     
         emailjs
           .sendForm(
-            'gmail',
+            'service_mlex5hm',
             'template_a1rus2q',
-            refForm.current,
+            form.current,
             '6KarAniuuTDfZyAQf'
           )
           .then(
-            () => {
+            (result) => {
+                console.log(result.text)
               alert('Message successfully sent!')
               window.location.reload(false)
             },
-            () => {
-                console.log(refForm.current)
+            (error) => {
+                console.log(error.text)
               alert('Failed to send the message, please try again')
             }
           )
@@ -53,7 +54,7 @@ const Contact = () => {
                      below form either.
                  </p>
                  <div className='contact-form'>
-                    <form ref={refForm} onSubmit={sendEmail}>
+                    <form ref={form} onSubmit={sendEmail}>
                         <ul>
                             <li className='half'>
                                 <input type="text" name="name" placeholder="Name" required/>
